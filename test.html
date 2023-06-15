@@ -2,10 +2,13 @@
 <html>
 <head>
   <title>Exemplo de Conexão MQTT</title>
+</head>
+<body>
+  <h1>Exemplo de Conexão MQTT</h1>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/paho-mqtt.min.js"></script>
   <script>
     // Configurações do broker MQTT
-    var broker = "wss://mqtt.eclipse.org:443/mqtt";
+    var broker = "wss://mqtt.eclipseprojects.io:443/mqtt";
     var clientId = "client1";
 
     // Criar o cliente MQTT
@@ -40,8 +43,5 @@
       useSSL: true  // Habilitar o uso de SSL/TLS para conexão segura (WSS)
     });
   </script>
-</head>
-<body>
-  <h1>Exemplo de Conexão MQTT</h1>
 </body>
 </html>
