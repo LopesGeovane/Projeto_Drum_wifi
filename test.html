@@ -1,52 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Exemplo MQTT</title>
+  <title>Exemplo de Conexão MQTT</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/paho-mqtt.min.js"></script>
+  <script>
+    // Configurações do broker MQTT
+    var broker = "wss://mqtt.eclipse.org:443/mqtt";
+    var clientId = "client1";
+
+    // Criar o cliente MQTT
+    var client = new Paho.MQTT.Client(broker, clientId);
+
+    // Configurações de callback
+    client.onConnectionLost = onConnectionLost;
+    client.onMessageArrived = onMessageArrived;
+
+    // Callback de conexão estabelecida
+    function onConnect() {
+      console.log("Conectado ao broker MQTT");
+      // Inscrever-se em um tópico
+      client.subscribe("seu_topico");
+    }
+
+    // Callback de falha na conexão
+    function onConnectionLost(responseObject) {
+      if (responseObject.errorCode !== 0) {
+        console.log("Conexão MQTT perdida: " + responseObject.errorMessage);
+      }
+    }
+
+    // Callback para chegada de mensagens
+    function onMessageArrived(message) {
+      console.log("Mensagem recebida: " + message.payloadString);
+    }
+
+    // Conectar ao broker MQTT
+    client.connect({
+      onSuccess: onConnect,
+      useSSL: true  // Habilitar o uso de SSL/TLS para conexão segura (WSS)
+    });
+  </script>
 </head>
 <body>
-    <h1>Dados MQTT</h1>
-    <div id="mqttData"></div>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/paho-mqtt.min.js"></script>
-    
-    <script>
-        
-        // Configurações do broker MQTT
-        var broker = "wss://mqtt.eclipseprojects.io/mqtt:443";
-        //var port = 443;
-        var clientId = "DadoTest1";
-
-        // Conexão MQTT
-        var client = new Paho.Client(broker, clientId);
-        
-        // Função chamada quando a conexão é estabelecida
-        function onConnect() {
-            console.log("Conectado ao broker MQTT");
-            client.subscribe("DadoTest01"); // Subscreve ao tópico desejado
-        }
-        
-        // Função chamada quando uma mensagem é recebida
-        function onMessageReceived(message) {
-            console.log("Mensagem recebida: " + message.payloadString);
-            document.getElementById("mqttData").innerHTML = message.payloadString; // Exibe a mensagem na página
-        }
-        
-        // Configura as funções de callback
-        client.onConnectionLost = function (responseObject) {
-            console.log("Conexão perdida: " + responseObject.errorMessage);
-        };
-        
-        client.onMessageArrived = function (message) {
-            onMessageReceived(message);
-        };
-        
-        // Conecta ao broker MQTT
-        client.connect({
-            onSuccess: onConnect,
-            onFailure: function (message) {
-                console.log("Falha na conexão: " + message.errorMessage);
-            }
-        });
-    </script>
+  <h1>Exemplo de Conexão MQTT</h1>
 </body>
 </html>
