@@ -7,17 +7,17 @@
     <h1>Dados MQTT</h1>
     <div id="mqttData"></div>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.1.0/paho-mqtt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/paho-mqtt.min.js"></script>
     
     <script>
         
         // Configurações do broker MQTT
-        var broker = "wss://mqtt.eclipseprojects.io/mqtt";
-        var port = 443;
+        var broker = "wss://mqtt.eclipseprojects.io/mqtt:443";
+        //var port = 443;
         var clientId = "DadoTest1";
 
         // Conexão MQTT
-        var client = new Paho.Client(broker, port, clientId, "websockets");
+        var client = new Paho.Client(broker, clientId);
         
         // Função chamada quando a conexão é estabelecida
         function onConnect() {
