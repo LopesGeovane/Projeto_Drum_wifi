@@ -9,7 +9,7 @@
     var clientId = "client1";
 
     // Criar o cliente MQTT
-    var client = new Paho.MQTT.Client(broker, clientId);
+    var client = new Paho.Client(broker, clientId);
 
     // Configurações de callback
     client.onConnectionLost = onConnectionLost;
