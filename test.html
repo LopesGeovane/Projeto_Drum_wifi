@@ -17,7 +17,7 @@
         var clientId = "DadoTest1";
 
         // Conexão MQTT
-        var client = new Paho.MQTT.Client(broker, port, clientId);
+        var client = new Paho.Client(broker, port, clientId);
         
         // Função chamada quando a conexão é estabelecida
         function onConnect() {
