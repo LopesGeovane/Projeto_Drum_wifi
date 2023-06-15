@@ -1,0 +1,42 @@
+.snarediv{
+    margin: 25vh auto;
+    position: relative;
+}
+
+.drumstick1{
+    margin: 25vh auto;
+    position: relative;
+    height: 50px;
+    width: 50px;
+}
+
+.snare{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.drumstick01{
+    position: absolute;
+    top:-10%;
+    left: -100%;
+}
+
+h1{
+    margin: 0;
+    padding: 0;
+    font-size: 18vw;
+    color: aliceblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+body{
+    background-image: radial-gradient(circle at center, #93bee7 0,#0a67be 100%);
+}
