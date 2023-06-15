@@ -12,12 +12,12 @@
     <script>
         
         // Configurações do broker MQTT
-        var broker = "mqtt.eclipseprojects.io";
-        var port = 8883;
+        var broker = "wss://mqtt.eclipseprojects.io/mqtt";
+        var port = 443;
         var clientId = "DadoTest1";
 
         // Conexão MQTT
-        var client = new Paho.Client(broker, port, clientId);
+        var client = new Paho.Client(broker, port, clientId, "websockets");
         
         // Função chamada quando a conexão é estabelecida
         function onConnect() {
