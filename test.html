@@ -9,7 +9,7 @@
   <script>
     // Configurações do broker MQTT
     var broker = "wss://mqtt.eclipseprojects.io:443/mqtt";
-    var clientId = "client1";
+    var clientId = "DadoTest1";
 
     // Criar o cliente MQTT
     var client = new Paho.Client(broker, clientId);
@@ -22,7 +22,7 @@
     function onConnect() {
       console.log("Conectado ao broker MQTT");
       // Inscrever-se em um tópico
-      client.subscribe("seu_topico");
+      client.subscribe("DadoTest01");
     }
 
     // Callback de falha na conexão
