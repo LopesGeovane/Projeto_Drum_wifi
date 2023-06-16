@@ -1,56 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Exemplo de página HTML com POST e GET</title>
+  <title>Receber Dados</title>
+  <script>
+    function extrairDadosDaURL() {
+      var urlParams = new URLSearchParams(window.location.search);
+      var dados = urlParams.get('dados');
+      
+      // Faça algo com os dados recebidos, como exibir na página
+      document.getElementById("dadosRecebidos").innerText = dados;
+    }
+    
+    window.onload = extrairDadosDaURL;
+  </script>
 </head>
 <body>
-    <h1>Exemplo de página HTML com POST e GET</h1>
-
-    <form id="myForm">
-        <label for="name">Nome:</label>
-        <input type="text" id="name" name="name"><br><br>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email"><br><br>
-
-        <button type="button" onclick="submitForm()">Enviar (POST)</button>
-    </form>
-
-    <h2>Resposta do servidor:</h2>
-    <p id="response"></p>
-
-    <h2>Requisição GET:</h2>
-    <button type="button" onclick="getRequest()">Fazer requisição GET</button>
-    <p id="getResponse"></p>
-
-    <script>
-        function submitForm() {
-            const form = document.getElementById("myForm");
-            const formData = new FormData(form);
-            
-            fetch("/api/post", {
-                method: "POST",
-                body: formData
-            })
-            .then(response => response.text())
-            .then(result => {
-                document.getElementById("response").innerHTML = result;
-            })
-            .catch(error => {
-                console.error("Erro:", error);
-            });
-        }
-
-        function getRequest() {
-            fetch("/api/get")
-            .then(response => response.text())
-            .then(result => {
-                document.getElementById("getResponse").innerHTML = result;
-            })
-            .catch(error => {
-                console.error("Erro:", error);
-            });
-        }
-    </script>
+  <h1>Dados Recebidos:</h1>
+  <div id="dadosRecebidos"></div>
 </body>
 </html>
