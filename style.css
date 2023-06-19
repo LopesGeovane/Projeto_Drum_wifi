@@ -6,8 +6,10 @@
 .drumstick1{
     margin: 25vh auto;
     position: relative;
-    height: 50px;
-    width: 50px;
+    height: 50vh;
+    width: 50vw;
+    transform: translateX(-50%);
+    transform: translateY(-50%);
 }
 
 .snare{
@@ -17,10 +19,16 @@
     transform: translateX(-50%);
 }
 
-.drumstick01{
+#drumstick01{
     position: absolute;
-    top:-10%;
-    left: -100%;
+    top:-15%;
+    left: 20%;
+}
+
+#drumstick02{
+    position: absolute;
+    top:-15%;
+    left: 50%;
 }
 
 h1{
@@ -40,3 +48,44 @@ h1{
 body{
     background-image: radial-gradient(circle at center, #93bee7 0,#0a67be 100%);
 }
+
+.animate1{
+    animation-duration: 0.1s;
+    animation-name: Tocar;
+}
+.animate2{
+    animation-duration: 0.1s;
+    animation-name: Tocar2;
+}
+
+@keyframes Tocar {
+    0% {
+        top: -15%;
+        transform: rotate(0deg);
+    }
+  
+    50% {
+        top: 5%;
+        transform: rotate(20deg);
+    }
+    100% {
+        top: -15%;
+        transform: rotate(0deg);
+    }
+  }
+
+@keyframes Tocar2 {
+    0% {
+        top: -15%;
+        transform: rotate(0deg);
+    }
+  
+    50% {
+        top: 5%;
+        transform: rotate(-20deg);
+    }
+    100% {
+        top: -15%;
+        transform: rotate(0deg);
+    }
+  }
