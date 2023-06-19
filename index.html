@@ -1,21 +1,28 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Receber Dados</title>
-  <script>
-    function extrairDadosDaURL() {
-      var urlParams = new URLSearchParams(window.location.search);
-      var dados = urlParams.get('dados');
-      
-      // Faça algo com os dados recebidos, como exibir na página
-      document.getElementById("dadosRecebidos").innerText = dados;
-    }
-    
-    window.onload = extrairDadosDaURL;
-  </script>
-</head>
-<body>
-  <h1>Dados Recebidos:</h1>
-  <div id="dadosRecebidos"></div>
-</body>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Telecomunicações</title>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <main>
+            
+            <div class="snarediv">
+                <button class="botao" id="botao" style="border: none; background: none;">
+                    <img src="snare-1.png" alt="" class="snare">
+                </button>
+            </div>
+
+            <div class="drumstick1">
+                <img src="drumstick.png" alt="" id="drumstick01">
+                <img src="drumstick2.png" alt="" id="drumstick02">
+            </div>
+
+        </main>
+
+        <script src="javasvript.js"></script>
+    </body>
 </html>
