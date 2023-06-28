@@ -23,12 +23,14 @@
     position: absolute;
     top:-15%;
     left: 20%;
+    transform-origin: center left;
 }
 
 #drumstick02{
     position: absolute;
     top:-15%;
     left: 50%;
+    transform-origin: center right;
 }
 
 h1{
@@ -48,44 +50,3 @@ h1{
 body{
     background-image: radial-gradient(circle at center, #93bee7 0,#0a67be 100%);
 }
-
-.animate1{
-    animation-duration: 0.1s;
-    animation-name: Tocar;
-}
-.animate2{
-    animation-duration: 0.1s;
-    animation-name: Tocar2;
-}
-
-@keyframes Tocar {
-    0% {
-        top: -15%;
-        transform: rotate(0deg);
-    }
-  
-    50% {
-        top: 5%;
-        transform: rotate(20deg);
-    }
-    100% {
-        top: -15%;
-        transform: rotate(0deg);
-    }
-  }
-
-@keyframes Tocar2 {
-    0% {
-        top: -15%;
-        transform: rotate(0deg);
-    }
-  
-    50% {
-        top: 5%;
-        transform: rotate(-20deg);
-    }
-    100% {
-        top: -15%;
-        transform: rotate(0deg);
-    }
-  }
